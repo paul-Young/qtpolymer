@@ -2,7 +2,7 @@
 #define QTPOLYMER_H
 
 #include <QMainWindow>
-#include "sop.h"
+#include "go.h"
 
 namespace Ui {
 class qtpolymer;
@@ -16,7 +16,7 @@ public:
     explicit qtpolymer(QWidget *parent = 0);
     ~qtpolymer();
     
-    SOP sim;
+    GO model;
 
 private slots:
     void on_choose_file_clicked(); // get protein
@@ -25,6 +25,9 @@ private slots:
     // show progress
 
     // display results
+
+    // start simulation
+    void on_start_clicked();
 
 private:
     Ui::qtpolymer *ui;

@@ -13,12 +13,14 @@ TEMPLATE = app
 SOURCES += main.cpp\
         qtpolymer.cpp \
     protein.cpp \
-    sop.cpp \
-    force.cpp
+    force.cpp \
+    go.cpp \
+    gaussian.cpp
 
 HEADERS  += qtpolymer.h \
     protein.h \
-    sop.h \
-    force.h
+    force.h \
+    go.h \
+    gaussian.h
 
 FORMS    += qtpolymer.ui

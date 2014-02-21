@@ -22,6 +22,8 @@ Protein::Protein(std::string filename)
 /* -------------- Protein Methods -------------- */
 
 void Protein::read(std::string filename){
+    name = "myoVI";
+
     FILE   *fp;
     char   buffer[BUF_MAX], *s;
     fp = fopen(filename.c_str(),"r");

@@ -7,7 +7,7 @@
 #include <math.h>
 #include <ostream>
 
-#define BUF_MAX 100
+#define BUF_MAX 200
 
 class Amino
 {

@@ -22,17 +22,18 @@ public:
 class Protein
 {
 public:
-    char name[10];
+    std::string name;
     int size;
     Amino *chain;
 
     Protein();
-    Protein(char *);
-    void read(char*);
+    Protein(std::string);
+    void read(std::string);
     double distance(int,int);
 };
 
 std::ostream& operator<<(std::ostream& os, const Protein& obj);
+std::ostream& operator<<(std::ostream& os, const Amino& obj);
 
 #endif // PROTEIN_H
 

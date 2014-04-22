@@ -11,20 +11,21 @@ Amino::Amino()
 /* -------------- Protein Constructor -------------- */
 Protein::Protein()
 {
+	name = "";
 }
 
-Protein::Protein(char * file)
+Protein::Protein(std::string filename)
 {
-    sscanf(name,"myoVI");
-    this->read(file);
+    this->read(filename);
 }
 
 /* -------------- Protein Methods -------------- */
 
-void Protein::read(char* file){
+void Protein::read(std::string filename){
     FILE   *fp;
     char   buffer[BUF_MAX], *s;
-    fp = fopen(file,"r");
+    fp = fopen(filename.c_str(),"r");
+    name = filename.substr(0,filename.find_last_of("."));
 
     size=0;
     while(fgets(buffer,BUF_MAX,fp) && (buffer[0]!='\n')){
@@ -75,5 +76,12 @@ std::ostream& operator<<(std::ostream& os, const Protein& obj)
     for (int i=1;i<=obj.size;i++){
         os << obj.chain[i].z;
     }
+    return os;
+}
+
+std::ostream& operator<<(std::ostream& os, const Amino& obj)
+{
+	os << "<Amino " << obj.idx 
+		<< ": (" << obj.x << ","<< obj.y << ","<< obj.z << ")>";
     return os;
 }
